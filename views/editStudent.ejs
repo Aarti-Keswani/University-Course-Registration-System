@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Edit Student</title>
+
+<link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Edit Student</h1>
+
+<form
+action="/students/update/<%= student.student_id %>"
+method="POST">
+
+<label>Name</label>
+
+<input
+type="text"
+name="student_name"
+value="<%= student.student_name %>"
+required>
+
+<br><br>
+
+<label>Department</label>
+
+<select name="department_id">
+
+<option value="1"
+<%= student.department_id==1?"selected":"" %>>
+
+Computer Science
+
+</option>
+
+<option value="2"
+<%= student.department_id==2?"selected":"" %>>
+
+Artificial Intelligence & Data Science
+
+</option>
+
+<option value="3"
+<%= student.department_id==3?"selected":"" %>>
+
+Information Technology
+
+</option>
+
+<option value="4"
+<%= student.department_id==4?"selected":"" %>>
+
+Electronics
+
+</option>
+
+</select>
+
+<br><br>
+
+<label>Year</label>
+
+<input
+type="number"
+name="year"
+value="<%= student.year %>"
+required>
+
+<br><br>
+
+<button>
+
+Update Student
+
+</button>
+
+</form>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Edit Course</title>
+
+<link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Edit Course</h1>
+
+<form
+action="/courses/update/<%= course.course_id %>"
+method="POST">
+
+<label>Course Name</label>
+
+<input
+type="text"
+name="course_name"
+value="<%= course.course_name %>"
+required>
+
+<br><br>
+
+<label>Credits</label>
+
+<input
+type="number"
+name="credits"
+value="<%= course.credits %>"
+required>
+
+<br><br>
+
+<label>Faculty</label>
+
+<select name="faculty_id">
+
+<option value="1"
+<%= course.faculty_id==1?"selected":"" %>>
+
+Dr. Sharma
+
+</option>
+
+<option value="2"
+<%= course.faculty_id==2?"selected":"" %>>
+
+Dr. Singh
+
+</option>
+
+<option value="3"
+<%= course.faculty_id==3?"selected":"" %>>
+
+Dr. Mehta
+
+</option>
+
+</select>
+
+<br><br>
+
+<button>
+
+Update Course
+
+</button>
+
+</form>
+
+</div>
+
+</body>
+</html>

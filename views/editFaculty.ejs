@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Edit Faculty</title>
+
+<link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Edit Faculty</h1>
+
+<form action="/faculty/update/<%= faculty.faculty_id %>" method="POST">
+
+<label>Faculty Name</label>
+
+<input
+type="text"
+name="faculty_name"
+value="<%= faculty.faculty_name %>"
+required>
+
+<br><br>
+
+<label>Department</label>
+
+<select name="department_id">
+
+<option value="1" <%= faculty.department_id==1?"selected":"" %>>Computer Science</option>
+
+<option value="2" <%= faculty.department_id==2?"selected":"" %>>Artificial Intelligence & Data Science</option>
+
+<option value="3" <%= faculty.department_id==3?"selected":"" %>>Information Technology</option>
+
+<option value="4" <%= faculty.department_id==4?"selected":"" %>>Electronics</option>
+
+</select>
+
+<br><br>
+
+<label>Faculty Type</label>
+
+<select name="faculty_type">
+
+<option value="Permanent" <%= faculty.faculty_type=="Permanent"?"selected":"" %>>
+
+Permanent
+
+</option>
+
+<option value="Visiting" <%= faculty.faculty_type=="Visiting"?"selected":"" %>>
+
+Visiting
+
+</option>
+
+</select>
+
+<br><br>
+
+<button>
+
+Update Faculty
+
+</button>
+
+</form>
+
+</div>
+
+</body>
+
+</html>

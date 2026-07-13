@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Faculty</title>
+
+<link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Faculty Management</h1>
+
+<a href="/">
+
+<button>Home</button>
+
+</a>
+
+<a href="/faculty/add">
+
+<button>Add Faculty</button>
+
+</a>
+
+<table>
+
+<tr>
+
+<th>ID</th>
+
+<th>Name</th>
+
+<th>Department</th>
+
+<th>Type</th>
+
+<th>Action</th>
+
+</tr>
+
+<% faculty.forEach(f=>{ %>
+
+<tr>
+
+<td><%= f.faculty_id %></td>
+
+<td><%= f.faculty_name %></td>
+
+<td><%= f.department_name %></td>
+
+<td><%= f.faculty_type %></td>
+
+<td>
+
+<a href="/faculty/edit/<%= f.faculty_id %>">
+
+<button>Edit</button>
+
+</a>
+
+<form
+action="/faculty/delete/<%= f.faculty_id %>"
+method="POST"
+style="display:inline;">
+
+<button>Delete</button>
+
+</form>
+
+</td>
+
+</tr>
+
+<% }) %>
+
+</table>
+
+</div>
+
+</body>
+
+</html>

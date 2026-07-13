@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Departments</title>
+
+<link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Department Management</h1>
+
+<a href="/">
+<button>Home</button>
+</a>
+
+<a href="/departments/add">
+<button>Add Department</button>
+</a>
+
+<table>
+
+<tr>
+
+<th>ID</th>
+<th>Department</th>
+<th>Action</th>
+
+</tr>
+
+<% departments.forEach(dept=>{ %>
+
+<tr>
+
+<td><%= dept.department_id %></td>
+
+<td><%= dept.department_name %></td>
+
+<td>
+
+<a href="/departments/edit/<%= dept.department_id %>">
+
+<button>Edit</button>
+
+</a>
+
+<form
+action="/departments/delete/<%= dept.department_id %>"
+method="POST"
+style="display:inline;">
+
+<button>Delete</button>
+
+</form>
+
+</td>
+
+</tr>
+
+<% }) %>
+
+</table>
+
+</div>
+
+</body>
+
+</html>

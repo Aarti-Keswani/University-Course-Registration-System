@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Enrollments</title>
+
+<link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Course Registration</h1>
+
+<a href="/">
+
+<button>Home</button>
+
+</a>
+
+<a href="/enrollments/add">
+
+<button>Register Student</button>
+
+</a>
+
+<table>
+
+<tr>
+
+<th>ID</th>
+
+<th>Student</th>
+
+<th>Course</th>
+
+<th>Semester</th>
+
+<th>Grade</th>
+
+<th>Action</th>
+
+</tr>
+
+<% enrollments.forEach(e=>{ %>
+
+<tr>
+
+<td><%= e.enrollment_id %></td>
+
+<td><%= e.student_name %></td>
+
+<td><%= e.course_name %></td>
+
+<td><%= e.semester %></td>
+
+<td><%= e.grade %></td>
+
+<td>
+
+<form
+action="/enrollments/delete/<%= e.enrollment_id %>"
+method="POST">
+
+<button>
+
+Delete
+
+</button>
+
+</form>
+
+</td>
+
+</tr>
+
+<% }) %>
+
+</table>
+
+</div>
+
+</body>
+
+</html>

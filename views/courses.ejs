@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Courses</title>
+
+<link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Course Management</h1>
+
+<a href="/">
+<button>Home</button>
+</a>
+
+<a href="/courses/add">
+<button>Add Course</button>
+</a>
+
+<table>
+
+<tr>
+
+<th>ID</th>
+
+<th>Course</th>
+
+<th>Credits</th>
+
+<th>Faculty</th>
+
+<th>Action</th>
+
+</tr>
+
+<% courses.forEach(course=>{ %>
+
+<tr>
+
+<td><%= course.course_id %></td>
+
+<td><%= course.course_name %></td>
+
+<td><%= course.credits %></td>
+
+<td><%= course.faculty_name %></td>
+
+<td>
+
+<a href="/courses/edit/<%= course.course_id %>">
+
+<button>Edit</button>
+
+</a>
+
+<form
+action="/courses/delete/<%= course.course_id %>"
+method="POST"
+style="display:inline;">
+
+<button>
+
+Delete
+
+</button>
+
+</form>
+
+</td>
+
+</tr>
+
+<% }) %>
+
+</table>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Faculty</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="container">
+
+<h1>Add Faculty</h1>
+
+<form action="/faculty/add" method="POST">
+
+<label>Faculty Name</label>
+
+<input type="text" name="faculty_name" required>
+
+<br><br>
+
+<label>Department</label>
+
+<select name="department_id">
+
+<option value="1">Computer Science</option>
+<option value="2">Artificial Intelligence & Data Science</option>
+<option value="3">Information Technology</option>
+<option value="4">Electronics</option>
+
+</select>
+
+<br><br>
+
+<label>Faculty Type</label>
+
+<select name="faculty_type">
+
+<option value="Permanent">Permanent</option>
+
+<option value="Visiting">Visiting</option>
+
+</select>
+
+<br><br>
+
+<button type="submit">Save Faculty</button>
+
+</form>
+
+<br>
+
+<a href="/faculty">
+
+<button>Back</button>
+
+</a>
+
+</div>
+
+</body>
+</html>
